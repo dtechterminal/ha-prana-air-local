@@ -22,6 +22,7 @@ async def test_user_flow(hass, monitor):
     assert result["type"] is FlowResultType.CREATE_ENTRY
     assert result["data"] == {"host": HOST}
     assert result["result"].unique_id == DEVICE_ID
+    assert result["title"] == "AQI Monitor"
 
 
 async def test_user_flow_cannot_connect(hass, aioclient_mock):

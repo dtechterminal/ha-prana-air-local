@@ -1,16 +1,16 @@
 {
   "config": {
-    "flow_title": "Prana Air ({host})",
+    "flow_title": "AQI Monitor ({host})",
     "step": {
       "user": {
-        "title": "Prana Air monitor",
+        "title": "AQI.in monitor",
         "description": "Enter the monitor's IP address or host name. The monitor serves its readings at the path /data on that address.\n\nThe monitor's address can change when its DHCP lease renews. A DHCP reservation or its DHCP host name (for example `esp32c3-XXXXXX`) keeps it reachable, and Home Assistant also follows it to a new address when it sees the monitor on DHCP.",
         "data": {
           "host": "Host"
         }
       },
       "discovery_confirm": {
-        "description": "Add the Prana Air monitor found at {host}?"
+        "description": "Add the AQI.in monitor found at {host}?"
       },
       "reconfigure": {
         "title": "Change the monitor's address",
@@ -21,12 +21,12 @@
     },
     "error": {
       "cannot_connect": "Could not reach the monitor at that address.",
-      "not_prana_air": "That address answered, but not with a Prana Air readings page.",
+      "not_prana_air": "That address answered, but not with an AQI.in monitor readings page.",
       "no_device_id": "The monitor did not show its device ID."
     },
     "abort": {
       "already_configured": "This monitor is already set up.",
-      "not_prana_air": "The discovered device is not a Prana Air monitor.",
+      "not_prana_air": "The discovered device is not an AQI.in monitor.",
       "cannot_connect": "Could not reach the discovered device.",
       "no_device_id": "The discovered device did not show a device ID.",
       "wrong_device": "That address belongs to a different monitor.",

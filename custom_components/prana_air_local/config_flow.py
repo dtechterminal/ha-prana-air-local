@@ -17,8 +17,8 @@ from homeassistant.helpers.service_info.dhcp import DhcpServiceInfo
 from homeassistant.util.network import is_ip_address
 
 from .api import PranaAirClient, PranaAirError, PranaAirParseError
-from .const import (CONF_SCAN_SECONDS, DEFAULT_SCAN_SECONDS, DOMAIN, MAX_SCAN_SECONDS,
-                    MIN_SCAN_SECONDS)
+from .const import (CONF_SCAN_SECONDS, DEFAULT_SCAN_SECONDS, DEVICE_NAME, DOMAIN,
+                    MAX_SCAN_SECONDS, MIN_SCAN_SECONDS)
 
 _LOGGER = logging.getLogger(__name__)
 
@@ -55,7 +55,7 @@ class PranaAirConfigFlow(ConfigFlow, domain=DOMAIN):
             else:
                 await self.async_set_unique_id(device_id)
                 self._abort_if_unique_id_configured(updates={CONF_HOST: host})
-                return self.async_create_entry(title="Prana Air", data={CONF_HOST: host})
+                return self.async_create_entry(title=DEVICE_NAME, data={CONF_HOST: host})
         return self.async_show_form(
             step_id="user", errors=errors,
             data_schema=vol.Schema({vol.Required(
@@ -82,7 +82,7 @@ class PranaAirConfigFlow(ConfigFlow, domain=DOMAIN):
                                            ) -> ConfigFlowResult:
         assert self._host
         if user_input is not None:
-            return self.async_create_entry(title="Prana Air", data={CONF_HOST: self._host})
+            return self.async_create_entry(title=DEVICE_NAME, data={CONF_HOST: self._host})
         self._set_confirm_only()
         return self.async_show_form(step_id="discovery_confirm",
                                     description_placeholders={"host": self._host})

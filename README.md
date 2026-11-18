@@ -1,8 +1,14 @@
-# Prana Air (Local) for Home Assistant
+# AQI.in Monitor (Local) for Home Assistant
 
-Reads a Prana Air air quality monitor over your local network, with no cloud
-account. The monitor's ESP32 (Bohu Monitor firmware) serves its live readings
-as a web page at `http://<monitor>/data`, and this integration polls that page.
+<picture>
+  <source media="(prefers-color-scheme: dark)" srcset="custom_components/prana_air_local/brand/dark_logo@2x.png">
+  <img src="custom_components/prana_air_local/brand/logo@2x.png" alt="AQI.in" width="160">
+</picture>
+
+Reads an [AQI.in](https://www.aqi.in/) air quality monitor over your local
+network, with no cloud account. The monitor's ESP32 runs Prana Air firmware
+(its pages say "Bohu Monitor" and "By Prana Air") and serves its live readings
+as a web page at `http://<monitor>/data`. This integration polls that page.
 
 ## Sensors
 
@@ -20,15 +26,17 @@ They go unavailable when the monitor stops answering and recover by themselves.
 
 ## Installation
 
-HACS: add this repository as a custom repository (category *Integration*),
-download **Prana Air (Local)** and restart Home Assistant.
+1. In Home Assistant, open **HACS**, search for **AQI.in Monitor (Local)** and download it.
+2. Restart Home Assistant.
+
+[![Open your Home Assistant instance and open this repository in HACS.](https://my.home-assistant.io/badges/hacs_repository.svg)](https://my.home-assistant.io/redirect/hacs_repository/?owner=dtechterminal&repository=ha-prana-air-local&category=integration)
 
 Without HACS: copy `custom_components/prana_air_local` into your
 `config/custom_components/` folder and restart Home Assistant.
 
 ## Setup
 
-**Settings → Devices & services → Add integration → Prana Air (Local)**, then
+**Settings → Devices & services → Add integration → AQI.in Monitor (Local)**, then
 enter the monitor's IP address or DHCP host name (it shows up as
 `esp32c3-XXXXXX`, where `XXXXXX` is the end of its MAC address).
 
@@ -62,4 +70,7 @@ uv pip install -p .venv/bin/python pytest-homeassistant-custom-component ruff
 ```
 
 `tests/fixtures/` holds pages captured from a monitor (the device ID and Wi-Fi
-network list are replaced).
+network list are replaced). Brand images: see [docs/branding.md](docs/branding.md).
+
+AQI.in and Prana Air names and logos belong to their owners. This is an
+independent community integration, not made or endorsed by AQI.in or Prana Air.

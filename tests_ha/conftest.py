@@ -34,6 +34,6 @@ def monitor(aioclient_mock):
 @pytest.fixture
 def entry(hass):
     e = MockConfigEntry(domain=DOMAIN, data={"host": HOST}, unique_id=DEVICE_ID,
-                        title="Prana Air")
+                        title="AQI Monitor")
     e.add_to_hass(hass)
     return e

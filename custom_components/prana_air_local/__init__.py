@@ -1,4 +1,4 @@
-"""Prana Air air quality monitors, read over the local network."""
+"""AQI.in air quality monitors (Prana Air firmware), read over the local network."""
 from __future__ import annotations
 
 from homeassistant.config_entries import ConfigEntry

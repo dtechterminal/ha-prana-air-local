@@ -1,4 +1,6 @@
-"""Local HTTP client for Prana Air (Bohu Monitor firmware) air quality monitors.
+"""Local HTTP client for AQI.in air quality monitors.
+
+The monitors run Prana Air firmware (page titles "Bohu Monitor" / "Prana Air").
 
 The monitor's ESP32 serves two HTML pages and no JSON:
 
@@ -39,7 +41,7 @@ class PranaAirError(Exception):
 
 
 class PranaAirParseError(PranaAirError):
-    """The page was not a Prana Air readings page."""
+    """The page was not an AQI.in monitor (Prana Air firmware) readings page."""
 
 
 @dataclass(frozen=True)

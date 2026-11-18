@@ -1,6 +1,6 @@
 {
   "domain": "prana_air_local",
-  "name": "Prana Air (Local)",
+  "name": "AQI.in Monitor (Local)",
   "codeowners": [
     "@ankurpandeyvns"
   ],
