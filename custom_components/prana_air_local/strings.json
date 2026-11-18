@@ -4,7 +4,7 @@
     "step": {
       "user": {
         "title": "Prana Air monitor",
-        "description": "Enter the monitor's IP address or host name. Its readings page is at http://<host>/data.\n\nThe monitor's address can change when its DHCP lease renews. A DHCP reservation or its DHCP host name (for example `esp32c3-XXXXXX`) keeps it reachable, and Home Assistant also follows it to a new address when it sees the monitor on DHCP.",
+        "description": "Enter the monitor's IP address or host name. The monitor serves its readings at the path /data on that address.\n\nThe monitor's address can change when its DHCP lease renews. A DHCP reservation or its DHCP host name (for example `esp32c3-XXXXXX`) keeps it reachable, and Home Assistant also follows it to a new address when it sees the monitor on DHCP.",
         "data": {
           "host": "Host"
         }

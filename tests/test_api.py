@@ -2,9 +2,8 @@ from pathlib import Path
 
 import pytest
 
-from custom_components.prana_air_local.api import (PranaAirClient, PranaAirParseError,
-                                                   Reading, format_mac, parse_data_page,
-                                                   parse_device_id)
+from prana_lib.api import (PranaAirClient, PranaAirParseError, Reading, format_mac,
+                           parse_data_page, parse_device_id)
 
 FIXTURES = Path(__file__).parent / "fixtures"
 
