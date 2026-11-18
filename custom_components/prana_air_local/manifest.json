@@ -1,0 +1,22 @@
+{
+  "domain": "prana_air_local",
+  "name": "Prana Air (Local)",
+  "codeowners": [
+    "@ankurpandeyvns"
+  ],
+  "config_flow": true,
+  "dhcp": [
+    {
+      "hostname": "esp32c3-*"
+    },
+    {
+      "registered_devices": true
+    }
+  ],
+  "documentation": "https://github.com/dtechterminal/ha-prana-air-local",
+  "integration_type": "device",
+  "iot_class": "local_polling",
+  "issue_tracker": "https://github.com/dtechterminal/ha-prana-air-local/issues",
+  "requirements": [],
+  "version": "1.0.0"
+}

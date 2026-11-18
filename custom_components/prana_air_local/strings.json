@@ -1,0 +1,49 @@
+{
+  "config": {
+    "flow_title": "Prana Air ({host})",
+    "step": {
+      "user": {
+        "title": "Prana Air monitor",
+        "description": "Enter the monitor's IP address or host name. Its readings page is at http://<host>/data.\n\nThe monitor's address can change when its DHCP lease renews. A DHCP reservation or its DHCP host name (for example `esp32c3-XXXXXX`) keeps it reachable, and Home Assistant also follows it to a new address when it sees the monitor on DHCP.",
+        "data": {
+          "host": "Host"
+        }
+      },
+      "discovery_confirm": {
+        "description": "Add the Prana Air monitor found at {host}?"
+      },
+      "reconfigure": {
+        "title": "Change the monitor's address",
+        "data": {
+          "host": "Host"
+        }
+      }
+    },
+    "error": {
+      "cannot_connect": "Could not reach the monitor at that address.",
+      "not_prana_air": "That address answered, but not with a Prana Air readings page.",
+      "no_device_id": "The monitor did not show its device ID."
+    },
+    "abort": {
+      "already_configured": "This monitor is already set up.",
+      "not_prana_air": "The discovered device is not a Prana Air monitor.",
+      "cannot_connect": "Could not reach the discovered device.",
+      "no_device_id": "The discovered device did not show a device ID.",
+      "wrong_device": "That address belongs to a different monitor.",
+      "reconfigure_successful": "The monitor's address was updated."
+    }
+  },
+  "options": {
+    "step": {
+      "init": {
+        "title": "Polling",
+        "data": {
+          "scan_seconds": "Poll interval"
+        },
+        "data_description": {
+          "scan_seconds": "The monitor refreshes its readings every 30 seconds."
+        }
+      }
+    }
+  }
+}
